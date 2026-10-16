@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio case study for a dengue intervention decision-support prototype.">
+  <title>Dengue Intervention Decision-Support Prototype</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #5c6b78;
+      --paper: #f7f8f5;
+      --card: #ffffff;
+      --line: #dce3e7;
+      --teal: #087f8c;
+      --teal-dark: #075c65;
+      --orange: #e4773c;
+      --shadow: 0 14px 40px rgba(23, 33, 43, .08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .shell { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      color: #fff;
+      background: linear-gradient(135deg, #075c65, #087f8c 62%, #1b9b91);
+      padding: 76px 0 84px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #b9eee7;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { line-height: 1.15; }
+    h1 { max-width: 800px; margin: 0; font-size: clamp(2.4rem, 6vw, 4.8rem); letter-spacing: -.055em; }
+    h2 { margin: 0 0 20px; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -.035em; }
+    h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    p { margin: 0 0 16px; }
+    .lede { max-width: 720px; margin-top: 24px; color: #e8fffc; font-size: 1.2rem; }
+    .tag { display: inline-block; margin-top: 16px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; color: #fff; font-size: .9rem; }
+
+    main { padding: 64px 0; }
+    section { margin-bottom: 72px; }
+    .intro { max-width: 760px; color: var(--muted); font-size: 1.12rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .card p, li { color: var(--muted); }
+    ul { margin: 10px 0 0; padding-left: 21px; }
+    li + li { margin-top: 8px; }
+
+    .quote {
+      margin: 28px 0 0;
+      padding: 26px 30px;
+      border-left: 5px solid var(--orange);
+      background: #fff4eb;
+      font-size: 1.3rem;
+      font-weight: 650;
+    }
+
+    .step { position: relative; padding-left: 54px; }
+    .step + .step { margin-top: 24px; }
+    .number {
+      position: absolute;
+      left: 0;
+      top: -4px;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--teal);
+      font-weight: 700;
+    }
+
+    .metric strong { display: block; color: var(--teal-dark); font-size: 1.8rem; }
+    .metric span { color: var(--muted); font-size: .92rem; }
+    .callout { padding: 26px; border-radius: 16px; background: #e7f4f1; }
+    .callout strong { color: var(--teal-dark); }
+    footer { padding: 28px 0 52px; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+    a { color: var(--teal-dark); font-weight: 650; }
+
+    @media (max-width: 760px) {
+      header { padding: 52px 0 60px; }
+      main { padding: 44px 0; }
+      section { margin-bottom: 52px; }
+      .grid, .grid.two { grid-template-columns: 1fr; }
+      .quote { margin-left: 0; margin-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell">
+      <p class="eyebrow">Product case study · Public health · Decision support</p>
+      <h1>Helping public-health teams compare dengue interventions across connected cities.</h1>
+      <p class="lede">
+        An epidemiological simulation prototype that turns population movement,
+        mosquito transmission, and observed case data into a scenario-planning concept.
+      </p>
+      <span class="tag">Academic prototype · Not for operational use</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section>
+      <h2>The opportunity</h2>
+      <p class="intro">
+        Dengue response teams must make decisions while an outbreak is changing and
+        people are moving between cities. A city with fewer current cases may still
+        become a priority if it is strongly connected to an active outbreak.
+      </p>
+      <div class="quote">
+        How might we help a response team decide where and when to intervene when
+        the available data is incomplete?
+      </div>
+    </section>
+
+    <section>
+      <h2>Product framing</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Target users</h3>
+          <p>Regional public-health planners, municipal vector-control teams, and hospital planning teams.</p>
+        </article>
+        <article class="card">
+          <h3>User need</h3>
+          <p>Compare plausible outbreak trajectories and understand the consequences of acting earlier or later.</p>
+        </article>
+        <article class="card">
+          <h3>Product promise</h3>
+          <p>Make scenario trade-offs visible before limited intervention resources are committed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>What I built</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>A transmission model</h3>
+          <ul>
+            <li>Human and mosquito compartments</li>
+            <li>Three interconnected fictional cities</li>
+            <li>Residents, workers, and city-to-city movement</li>
+            <li>Transmission and recovery parameters</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>A data and fitting workflow</h3>
+          <ul>
+            <li>SQLite patient snapshots for exploration</li>
+            <li>Aggregated city-level time-series data</li>
+            <li>Numerical integration with SciPy</li>
+            <li>Least-squares parameter fitting against observations</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>How the concept works</h2>
+      <div class="card">
+        <div class="step">
+          <span class="number">1</span>
+          <h3>Aggregate the evidence</h3>
+          <p>Convert patient snapshots into city-level infection and outcome time series.</p>
+        </div>
+        <div class="step">
+          <span class="number">2</span>
+          <h3>Estimate the outbreak dynamics</h3>
+          <p>Fit the model to observed data while representing mosquito transmission and population movement.</p>
+        </div>
+        <div class="step">
+          <span class="number">3</span>
+          <h3>Compare scenarios</h3>
+          <p>Run a baseline and intervention scenario, such as earlier treatment or reduced mosquito exposure.</p>
+        </div>
+        <div class="step">
+          <span class="number">4</span>
+          <h3>Support a decision</h3>
+          <p>Present peak timing, projected burden, and change versus baseline in a format a planning team can discuss.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Decision-oriented outputs</h2>
+      <p class="intro">
+        The next product layer would move beyond technical plots and make the
+        model useful in a planning conversation.
+      </p>
+      <div class="grid">
+        <article class="card metric">
+          <strong>Peak date</strong>
+          <span>When infections or hospitalizations are expected to peak</span>
+        </article>
+        <article class="card metric">
+          <strong>Burden</strong>
+          <span>Projected cases and severe outcomes by city</span>
+        </article>
+        <article class="card metric">
+          <strong>Delta</strong>
+          <span>Estimated reduction versus the no-intervention baseline</span>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Product decisions and trade-offs</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Optimize for comparison, not prediction theatre</h3>
+          <p>
+            The prototype should communicate that scenarios are useful for
+            comparing choices, not for presenting false certainty about the future.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Expose assumptions</h3>
+          <p>
+            Every result should show the selected intervention, start date,
+            parameters, data period, and model limitations.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Use a progressive disclosure model</h3>
+          <p>
+            Start with a recommendation summary and key metrics. Let technical
+            users open the detailed curves, parameters, and methodology.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Keep humans in the loop</h3>
+          <p>
+            The product should support expert discussion and resource planning,
+            never replace clinical or public-health judgment.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>What I learned</h2>
+      <div class="callout">
+        <p>
+          A technically ambitious model does not automatically become a useful
+          product. The value comes from connecting the model to a specific user,
+          decision, workflow, and measurable outcome.
+        </p>
+        <p>
+          This project also made the importance of data definitions visible:
+          “hospitalized,” “severe,” and “dead” are not interchangeable metrics.
+          Clear terminology is a product-quality and model-quality requirement.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Next iteration</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>1. Trustworthy foundations</h3>
+          <p>Align outcome definitions, validate parameter fitting, handle missing data explicitly, and add automated tests.</p>
+        </article>
+        <article class="card">
+          <h3>2. Usable MVP</h3>
+          <p>Build a Streamlit interface for city selection, intervention timing, baseline comparison, and exportable results.</p>
+        </article>
+        <article class="card">
+          <h3>3. Decision confidence</h3>
+          <p>Add uncertainty ranges, out-of-sample validation, data provenance, and sensitivity analysis.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project materials</h2>
+      <p>
+        Explore the implementation in <a href="./Simulation.py">Simulation.py</a>,
+        the data preparation notes in <a href="./data.sql">data.sql</a>, and the
+        setup instructions in <a href="./README.md">README.md</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      Portfolio project · Dengue intervention decision-support prototype ·
+      All model outputs require validation before real-world use.
+    </div>
+  </footer>
+</body>
+</html>
